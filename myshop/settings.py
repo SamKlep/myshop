@@ -130,7 +130,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'samklepdev@gmail.com'
+EMAIL_HOST_PASSWORD = '&BDzEx3LyPCp8H}zeoGsMc&QFP4rqrFKhEP'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 
 # Braintree settings
