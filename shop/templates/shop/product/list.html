@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<div id="id">
+<div id="sidebar">
     <h3>Categories</h3>
     <ul>
         <li {% if not category %}class="selected" {% endif %}>
@@ -19,15 +19,15 @@
         {% endfor %}
     </ul>
 </div>
-<div class="product-list" id="main">
-    <h1>{% if category %}{{ category.name }}{% else %}Products
-        {% endif %}</h1>
+<div id="main" class="product-list">
+    <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
     {% for product in products %}
     <div class="item">
         <a href="{{ product.get_absolute_url }}">
             <img
-                src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">{{ product.name }}</a>
-
+                src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+        </a>
+        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
         <br>
         ${{ product.price }}
     </div>
